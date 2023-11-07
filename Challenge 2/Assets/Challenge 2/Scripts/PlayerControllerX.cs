@@ -10,9 +10,13 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // On spacebar press, send dog
-        if (Input.GetKeyDown(KeyCode.Space)) && cooldown
+        if (Input.GetKeyDown(KeyCode.Space) && cooldown <= 0)
         {
             Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+            cooldown = 1;
+        }
+        if (cooldown >= 0) { 
+            cooldown -= Time.deltaTime;
         }
     }
 }

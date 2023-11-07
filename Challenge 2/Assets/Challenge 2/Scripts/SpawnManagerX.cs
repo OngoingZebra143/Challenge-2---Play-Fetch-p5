@@ -27,7 +27,7 @@ public class SpawnManagerX : MonoBehaviour
 
         // instantiate ball at random spawn location
         int ballNumber = Random.Range(0, ballPrefabs.Length);
-        Instantiate(ballPrefabs[0], spawnPos, ballPrefabs[ballNumber].transform.rotation);
+        Instantiate(ballPrefabs[ballNumber], spawnPos, ballPrefabs[ballNumber].transform.rotation);
         Invoke("SpawnRandomBall", Random.Range(2f, 4f));
     }
 
